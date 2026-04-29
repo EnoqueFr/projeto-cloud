@@ -1,6 +1,7 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
+    // Define o cabeçalho para aceitar caracteres especiais (acentos)
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
 
     if (req.url === '/') {
@@ -15,7 +16,10 @@ const server = http.createServer((req, res) => {
     }
 });
 
+// O Railway injeta a porta automaticamente na variável process.env.PORT
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
+
+// O "0.0.0.0" é fundamental para que o serviço seja exposto para fora do container do Railway
+server.listen(PORT, "0.0.0.0", () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
