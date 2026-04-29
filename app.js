@@ -5,7 +5,7 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
 
     if (req.url === '/') {
-        res.end('<h1>Página Inicial</h1><p>Projeto de Nuvem - Rota 1</p><a href="/servicos">Serviços</a>');
+        res.end('<h1>Página Inicial</h1><p>Projeto de Nuvem - Rota 1 - Enoque Ferreira e Evandro Dias</p><a href="/servicos">Serviços</a>');
     } else if (req.url === '/servicos') {
         res.end('<h1>Nossos Serviços</h1><p>Configuração de instâncias e deploys - Rota 2</p><a href="/sobre">Sobre</a>');
     } else if (req.url === '/sobre') {
